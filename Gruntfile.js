@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 	var webpack = require("webpack");
 	var webpackConfig = require("./webpack.config.js");
 
-	var deployPath = "deploy/";
+	var deployPath = "docs/";
 
 	// Project configuration.
 	grunt.initConfig({
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 					pretty: true
 				},
 				files: [
-					{expand: true, cwd: "deploy/", src: ["**"], dest: "webvowl/"}
+					{expand: true, cwd: "docs/", src: ["**"], dest: "webvowl/"}
 				]
 			}
 		},
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 					open: "http://localhost:8000/",
 					middleware: function (connect, options, middlewares) {
 						return middlewares.concat([
-							require("serve-favicon")("deploy/favicon.ico"),
+							require("serve-favicon")("docs/favicon.ico"),
 							require("serve-static")(options.base[0])
 						]);
 					}
@@ -121,7 +121,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: [
-					{expand: true, cwd: "deploy/js/", src: "webvowl*.js", dest: "deploy/js/"}
+					{expand: true, cwd: "docs/js/", src: "webvowl*.js", dest: "docs/js/"}
 				]
 			}
 		},

@@ -10,7 +10,7 @@ module.exports = {
 		"webvowl.app": "./src/app/js/entry.js"
 	},
 	output: {
-		path: path.join(__dirname, "deploy/"),
+		path: path.join(__dirname, "docs/"),
 		publicPath: "",
 		filename: "js/[name].js",
 		chunkFilename: "js/[chunkhash].js",
